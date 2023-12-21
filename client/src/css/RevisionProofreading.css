@@ -1,0 +1,25 @@
+/* RevisionProofreading.css */
+.RevisionProofreading-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #fcf3cf;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .RevisionProofreading-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .RevisionProofreading-heading {
+    color: #f39c12;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .RevisionProofreading-paragraph {
+    color: #666;
+    line-height: 1.6;
+  }
+  

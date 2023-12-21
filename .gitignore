@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Build output
+/build/
+/dist/
+/out/
+
+# Dependency directories
+.pnp/
+.pnp.js
+
+# Testing
+/coverage/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# VSCode
+.vscode/
+
+# IntelliJ
+.idea/
+
+# npm
+*.sublime-*
+*.swp
+*~
+.DS_Store
+.sass-cache/
+config.gypi
+npm-debug.log
+test/tmp/
+test/fixtures/
+test/output/
+.nyc_output/

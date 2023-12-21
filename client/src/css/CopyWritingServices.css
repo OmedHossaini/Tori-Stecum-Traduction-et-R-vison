@@ -1,0 +1,25 @@
+/* CopywritingServices.css */
+.copywriting-services-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #dff0d8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .copywriting-services-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .copywriting-services-heading {
+    color: #5cb85c;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .copywriting-services-paragraph {
+    color: #666;
+    line-height: 1.6;
+  }
+  

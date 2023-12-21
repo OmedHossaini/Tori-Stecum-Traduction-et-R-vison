@@ -1,0 +1,13 @@
+.hero-section {
+  background-color: #34495e; /* Dark blue background */
+  color: #ecf0f1; /* Light text color */
+  text-align: center;
+  padding: 80px 0;
+}
+
+/* ContactMe.css */
+.contact-me-container {
+  background-color: #ecf0f1; /* Light background */
+  padding: 40px;
+  margin-top: 20px;
+}

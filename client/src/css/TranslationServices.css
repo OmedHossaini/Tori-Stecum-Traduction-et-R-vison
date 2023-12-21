@@ -1,0 +1,25 @@
+/* TranslationServices.css */
+.TranslationServices-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #eaf2f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .TranslationServices-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .TranslationServices-heading {
+    color: #3498db;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .TranslationServices-paragraph {
+    color: #666;
+    line-height: 1.6;
+  }
+  
