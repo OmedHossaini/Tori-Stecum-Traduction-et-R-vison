@@ -1,25 +1,37 @@
 /* RevisionProofreading.css */
 .RevisionProofreading-container {
-    text-align: center;
-    padding: 40px;
-    background-color: #fcf3cf;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .RevisionProofreading-container:hover {
-    transform: scale(1.05);
-  }
-  
+  padding: 40px;
+  margin-top: 20px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  overflow: hidden; /* Prevents horizontal overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.RevisionProofreading-heading {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Dark text color */
+}
+
+.RevisionProofreading-paragraph {
+  font-size: 1.4em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #34495e; /* Slightly darker text color */
+}
+
+/* Additional styles for responsiveness */
+@media only screen and (max-width: 768px) {
   .RevisionProofreading-heading {
-    color: #f39c12;
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 2em;
   }
-  
+
   .RevisionProofreading-paragraph {
-    color: #666;
-    line-height: 1.6;
+    font-size: 1.2em;
   }
-  
+}

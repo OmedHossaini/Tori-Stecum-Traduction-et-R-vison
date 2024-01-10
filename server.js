@@ -1,70 +1,51 @@
+// server.js
+
 const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
+const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
 app.use(cors());
 app.use(express.json());
 
-async function startServer() {
+// Server - /api/submitForm route
+app.post('/api/submitForm', async (req, res) => {
   try {
-    await client.connect();
-    console.log('Connected to MongoDB');
+    const formData = req.body;
+    console.log('Received form data:', formData);
 
-    const database = client.db('Tori');
-    const clientsCollection = database.collection('Clients');
-
-   // ... (existing code)
-
-  // Server - /api/submitForm route
-  app.post('/api/submitForm', async (req, res) => {
-    let client; // Declare the client variable outside the try-catch block
-  
-    try {
-      const formData = req.body;
-      console.log('Received form data:', formData);
-  
-      client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-      await client.connect();
-  
-      const database = client.db('Tori');
-      const clientsCollection = database.collection('Clients');
-  
-      const result = await clientsCollection.insertOne(formData);
-      console.log('MongoDB Result:', result);
-  
-      if (result && result.acknowledged && result.insertedId) {
-        console.log('Form submitted successfully:', result.insertedId);
-        res.status(201).json({ message: 'Form submitted successfully', insertedId: result.insertedId });
-      } else {
-        console.error('Error submitting form: Invalid result from MongoDB:', result);
-        res.status(500).json({ message: 'Internal Server Error', details: 'Failed to process the form submission', result });
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error.message || error);
-      console.error('Error stack trace:', error.stack);
-      res.status(500).json({ message: 'Internal Server Error', details: 'Failed to process the form submission', error: error.message || error });
-    } finally {
-      // Close the MongoDB client in the finally block
-      if (client) {
-        await client.close();
-      }
-    }
-  });
-  
-
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+    // Send email using nodemailer
+    const transporter = nodemailer.createTransport({
+      service: 'outlook',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+      },
     });
-  } finally {
-    // The client will be closed when the server is stopped
-  }
-}
 
-startServer();
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'toristecum.translations@gmail.com',
+      subject: 'New Contact Form Submission',
+      text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully');
+
+    res.status(201).json({ message: 'Form submitted successfully' });
+  } catch (error) {
+    console.error('Error submitting form:', error.message || error);
+    res.status(500).json({ message: 'Internal Server Error', details: 'Failed to process the form submission', error: error.message || error });
+  }
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

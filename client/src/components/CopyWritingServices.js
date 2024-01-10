@@ -3,13 +3,12 @@ import React from 'react';
 import '../css/CopyWritingServices.css';
 
 const CopywritingServices = () => (
-  <div className="copywriting-services-container">
+  <div id="copywriting" className="copywriting-services-container">
     <h2 className="copywriting-services-heading">Copywriting Services</h2>
     <p className="copywriting-services-paragraph">
-      Elevate your brand with our copywriting services at Tori Stecum Traduction et Révision. We create compelling and engaging content in both French and English to help you communicate effectively with your audience.
+      Copywriting is, for those who may not know, the art of crafting persuasive and compelling written content for various mediums, such as advertisements, websites, marketing materials, and more. If you’re in need of something written from scratch, hit the contact button below! 💡
     </p>
   </div>
 );
 
 export default CopywritingServices;
-

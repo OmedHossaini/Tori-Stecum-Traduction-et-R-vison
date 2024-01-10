@@ -1,3 +1,5 @@
+// ContactMe.js
+
 import React, { useState } from 'react';
 import '../css/ContactMe.css';
 const ContactMe = () => {
@@ -27,16 +29,16 @@ const ContactMe = () => {
       }
 
       const data = await response.json();
-      window.alert('Form submitted successfully!');
-      console.log('Form submitted successfully:', data);
+      window.alert(data.message);
+      console.log('Email sent successfully:', data);
     } catch (error) {
-      console.error('Error submitting form:', error.message || error);
-      window.alert('Error submitting form. Please try again.');
+      console.error('Error sending email:', error.message || error);
+      window.alert('Error sending email. Please try again.');
     }
   };
 
   return (
-    <div className="contact-me-container"> 
+    <div id="contact" className="contact-me-container">
       <h2>Contact Me</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
@@ -50,6 +52,8 @@ const ContactMe = () => {
 
         <button type="submit">Submit</button>
       </form>
+
+      <p>If you need a quote or have any inquiries, feel free to drop us a line for a guaranteed prompt and warm response. Au plaisir de travailler avec vous 🌎 Cheers to future projects together!</p>
     </div>
   );
 };

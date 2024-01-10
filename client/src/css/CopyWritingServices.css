@@ -1,25 +1,43 @@
-/* CopywritingServices.css */
+/* CopyWritingServices.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .copywriting-services-container {
-    text-align: center;
-    padding: 40px;
-    background-color: #dff0d8;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .copywriting-services-container:hover {
-    transform: scale(1.05);
-  }
-  
+  background-color: #f8f9fa; /* Light background color */
+  padding: 40px;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  overflow: hidden; /* Prevents horizontal overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Minimum height of the viewport */
+}
+
+.copywriting-services-heading {
+  font-size: 2.5rem;
+  color: #007bff; /* Blue color */
+  margin-bottom: 20px;
+}
+
+.copywriting-services-paragraph {
+  font-size: 1.4rem;
+  color: #343a40; /* Dark text color */
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* Additional styles for responsiveness */
+@media only screen and (max-width: 768px) {
   .copywriting-services-heading {
-    color: #5cb85c;
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 2rem;
   }
-  
+
   .copywriting-services-paragraph {
-    color: #666;
-    line-height: 1.6;
+    font-size: 1.2rem;
   }
-  
+}

@@ -3,9 +3,9 @@ import React from 'react';
 import '../css/RevisionProofreading.css';
 
 const RevisionProofreading = () => (
-  <div className="RevisionProofreading-container">
+  <div id="revision" className="RevisionProofreading-container">
     <h2 className="RevisionProofreading-heading">Revision and Proofreading</h2>
-    <p className="RevisionProofreading-paragraph">Ensure the quality of your content with our revision and proofreading services at Tori Stecum Traduction et Révision. We review documents in both French and English, providing thorough editing to enhance clarity, coherence, and correctness.</p>
+    <p className="RevisionProofreading-paragraph">While AI tools have made significant strides in language processing, the nuanced understanding and contextual finesse provided by human proofreading still surpass the capabilities of automated solutions. All you need is a revisor’s eagle eye to make sure your text is polished to perfection, prior to its publication. We are professional grammatical errors, typos, or inconsistency catchers. 🎣</p>
   </div>
 );
 
