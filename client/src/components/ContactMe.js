@@ -53,7 +53,8 @@ const ContactMe = () => {
         <button type="submit">Submit</button>
       </form>
 
-      <p>If you need a quote or have any inquiries, feel free to drop us a line for a guaranteed prompt and warm response. Au plaisir de travailler avec vous 🌎 Cheers to future projects together!</p>
+      <p>If you need a quote or have any inquiries, feel free to drop us a line for a guaranteed prompt and warm response.</p>
+        <p>Au plaisir de travailler avec vous 🌎 Cheers to future projects together!</p>
     </div>
   );
 };

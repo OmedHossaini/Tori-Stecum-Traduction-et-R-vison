@@ -1,9 +1,12 @@
 // TranslationServices.js
 import React from 'react';
 import '../css/TranslationServices.css';
+import AnimatedBackground from './AnimatedBackground';
 
 const TranslationServices = () => (
+  
   <div id="translation" className="TranslationServices-container">
+    
     <h2 className="TranslationServices-heading">Translation Services</h2>
     <p className="TranslationServices-paragraph">
       We offer translation services for texts in French and English at Tori Stecum Traduction et Révision. Whether you need documents translated from French to English or vice versa, our team is here to assist you.

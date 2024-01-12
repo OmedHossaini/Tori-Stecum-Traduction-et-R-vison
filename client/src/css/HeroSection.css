@@ -1,7 +1,7 @@
 /* HeroSection.css */
 .hero-section {
-  background-color: #34495e;
-  color: #ffffff;
+  background-color: rgb(245, 250, 245);
+  color: #141414;
   text-align: center;
   padding: 80px 20px;
   margin-bottom: 20px;
@@ -15,6 +15,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  z-index: 3;
   position: relative; /* Add position relative for absolute positioning */
 }
 
@@ -37,7 +38,7 @@
 .hero-subheading {
   font-size: 1.8em;
   margin-bottom: 20px;
-  color: #3498db;
+  color: #035214;
 }
 
 .hero-message {
@@ -46,13 +47,14 @@
   margin-bottom: 20px;
 }
 
-/* CTA Button styles */
 .cta-button-container {
   margin-top: 30px;
+  position: relative; /* Add position relative */
+  z-index: 2; /* Set a higher z-index value */
 }
 
 .cta-button {
-  background-color: #3498db;
+  background-color: #035214;
   color: #ffffff;
   padding: 15px 30px;
   font-size: 1.2em;
@@ -60,11 +62,13 @@
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
   display: inline-block;
+  position: relative; /* Add position relative */
 }
 
 .cta-button:hover {
   background-color: #2980b9;
 }
+
 
 /* Quote icon styles */
 .quote-icon {

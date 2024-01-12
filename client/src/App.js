@@ -8,6 +8,7 @@ import RevisionProofreading from './components/RevisionProofreading';
 import CopywritingServices from './components/CopyWritingServices';
 import ContactMe from './components/ContactMe';
 import ContactPage from './components/ContactPage';
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -26,10 +27,12 @@ function App() {
 
   return (
     <Router>
+      
       <div className="App">
         <NavBar scrolled={scrollPosition > 50} />
 
         <div className="scrollable-content">
+          
           <HeroSection />
           <TranslationServices />
           <RevisionProofreading />

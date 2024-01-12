@@ -1,6 +1,6 @@
 /* NavBar.css */
 .navbar {
-  background-color: white; /* Dark blue background */
+  background-color: rgba(255, 255, 255, 0.986); /* Dark blue background */
   color: #ecf0f1; /* Light text color */
   padding: 15px 0;
   position: fixed;

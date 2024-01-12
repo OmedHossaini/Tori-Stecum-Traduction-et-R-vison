@@ -1,7 +1,7 @@
 // HeroSection.js
 import React, { useEffect, useState } from 'react';
 import '../css/HeroSection.css';
-import { FaQuoteLeft } from 'react-icons/fa'; // Import the quote icon from react-icons library
+import AnimatedBackground from './AnimatedBackground';
 
 const HeroSection = () => {
   const [loaded, setLoaded] = useState(false);
@@ -16,6 +16,7 @@ const HeroSection = () => {
 
   return (
     <div id="home" className={`hero-section ${loaded ? 'loaded' : ''}`}>
+      <AnimatedBackground />
       <div className="hero-content">
         <h1 className="hero-heading">Welcome to Tori Stecum Traduction et Révision</h1>
         <p className="hero-subheading">Your Partner for Quality Language Services</p>
@@ -29,15 +30,10 @@ const HeroSection = () => {
         </p>
 
         <div className="cta-button-container">
-          <a href="#contact" className="cta-button">
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      {/* Additional element: Quote icon */}
-      <div className="quote-icon">
-        <FaQuoteLeft />
+  <a href="#contact" className="cta-button">
+    Get Started
+  </a>
+</div>
       </div>
     </div>
   );
