@@ -1,4 +1,3 @@
-// ContactPage.js
 import React from 'react';
 import ContactMe from './ContactMe';
 import '../css/ContactPage.css';

@@ -1,5 +1,3 @@
-// ContactMe.js
-
 import React, { useState } from 'react';
 import '../css/ContactMe.css';
 const ContactMe = () => {

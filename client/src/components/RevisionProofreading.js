@@ -1,4 +1,3 @@
-// RevisionProofreading.js
 import React, { useEffect, useState } from 'react';
 import '../css/RevisionProofreading.css';
 import AnimatedBackground from './AnimatedBackground';

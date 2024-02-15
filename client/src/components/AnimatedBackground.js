@@ -1,4 +1,3 @@
-// AnimatedBackground.js
 import React from 'react';
 import '../css/AnimatedBackground.css';
 

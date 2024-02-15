@@ -1,4 +1,3 @@
-// CopywritingServices.js
 import React from 'react';
 import '../css/CopyWritingServices.css';
 import AnimatedBackground

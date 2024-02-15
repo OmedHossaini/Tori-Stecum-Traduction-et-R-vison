@@ -1,4 +1,3 @@
-// HeroSection.js
 import React, { useEffect, useState } from 'react';
 import '../css/HeroSection.css';
 import AnimatedBackground from './AnimatedBackground';

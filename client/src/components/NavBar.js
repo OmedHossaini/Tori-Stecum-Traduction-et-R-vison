@@ -1,4 +1,3 @@
-// NavBar.js
 import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink, Events, animateScroll as scroll } from 'react-scroll';
 import '../css/NavBar.css';
