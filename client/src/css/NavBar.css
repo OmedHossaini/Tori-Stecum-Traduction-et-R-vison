@@ -1,4 +1,3 @@
-/* NavBar.css */
 .navbar {
   background-color: rgba(255, 255, 255, 0.986); /* Dark blue background */
   color: #ecf0f1; /* Light text color */
@@ -20,37 +19,78 @@
   align-items: center;
 }
 
-.logo {
-  max-width: 200px; /* Adjust logo size for desktop */
-  margin-left: 40px;
+.logo-container {
+  cursor: pointer;
 }
 
+.logo {
+  max-width: 200px; /* Adjust logo size for desktop */
+}
 
-@media (max-width: 768px) {
-  .logo {
-    max-width: 150px; /* Adjust logo size for mobile */
-    margin-left: 20px; /* Adjust margin if needed */
-  }
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px; /* Add margin to separate toggle from links */
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ecf0f1;
+  margin: 4px 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Position dropdown below the toggle */
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust background color */
+  padding: 20px 0;
+  transition: transform 0.3s ease;
+  z-index: 999; /* Ensure dropdown is above other content */
+}
+
 .nav-links li {
   margin-right: 20px;
-  position: relative;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: black;
   font-size: 1.2em;
-  position: relative;
   transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ecf0f1;
 }
 
 .nav-links li::after {
@@ -90,4 +130,32 @@
 
 .nav-links li:nth-child(5)::after {
   background-color: #8a2be2; /* Different color for the fifth page */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 100%; /* Adjust logo size for mobile */
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .nav-links a {
+    color: #ecf0f1; /* Adjust link color */
+    font-size: 1.2em;
+  }
 }

@@ -5,6 +5,7 @@ import logo from '../Tori Stecum.png';
 
 const NavBar = ({ scrolled }) => {
   const [activePage, setActivePage] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,10 +51,15 @@ const NavBar = ({ scrolled }) => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <div className="logo-container">
-          <img src={logo} alt="Logo" className="logo" onClick={scrollToTop} />
+        <div className="logo-container" onClick={scrollToTop}>
+          <img src={logo} alt="Logo" className="logo" />
         </div>
-        <ul className="nav-links">
+        <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li>
             <ScrollLink
               to="home"
