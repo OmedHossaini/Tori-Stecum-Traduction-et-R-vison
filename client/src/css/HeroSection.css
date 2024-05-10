@@ -82,6 +82,8 @@
 @media only screen and (max-width: 768px) {
   .hero-heading {
     font-size: 2.5em;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   .hero-subheading {
