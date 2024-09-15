@@ -30,7 +30,7 @@ const HeroSection = () => {
 
         <div className="cta-button-container">
   <a href="#contact" className="cta-button">
-    Website is down 
+    I am restarting the website 
   </a>
 </div>
       </div>
