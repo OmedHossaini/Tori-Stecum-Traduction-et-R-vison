@@ -29,10 +29,10 @@ const HeroSection = () => {
         </p>
 
         <div className="cta-button-container">
-  <a href="#contact" className="cta-button">
-    I am restarting the website 
-  </a>
-</div>
+          <a href="mailto:toristecum.translations@gmail.com" className="cta-button">
+            Send an Email! 
+          </a>
+        </div>
       </div>
     </div>
   );
