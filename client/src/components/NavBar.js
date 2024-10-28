@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as ScrollLink, Events, animateScroll as scroll } from 'react-scroll';
 import '../css/NavBar.css';
 import logo from '../Tori Stecum.png';
@@ -10,14 +10,11 @@ const NavBar = ({ scrolled }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollOffset = window.scrollY;
-
-      // Get each section by ID and check if they exist before accessing offsetTop
       const translationSection = document.getElementById('translation');
       const revisionSection = document.getElementById('revision');
       const copywritingSection = document.getElementById('copywriting');
       const contactSection = document.getElementById('contact');
 
-      // Safely set the offset values with null checks
       const translationOffset = translationSection ? translationSection.offsetTop : Infinity;
       const revisionOffset = revisionSection ? revisionSection.offsetTop : Infinity;
       const copywritingOffset = copywritingSection ? copywritingSection.offsetTop : Infinity;
@@ -53,6 +50,7 @@ const NavBar = ({ scrolled }) => {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
+    setMenuOpen(false); // Close menu on scroll
   };
 
   return (
@@ -73,6 +71,7 @@ const NavBar = ({ scrolled }) => {
               smooth={true}
               duration={500}
               onSetActive={() => handleSetActive(0)}
+              onClick={() => setMenuOpen(false)}
               className={activePage === 0 ? 'active' : ''}
             >
               Home
@@ -84,6 +83,7 @@ const NavBar = ({ scrolled }) => {
               smooth={true}
               duration={500}
               onSetActive={() => handleSetActive(1)}
+              onClick={() => setMenuOpen(false)}
               className={activePage === 1 ? 'active' : ''}
             >
               Translation Services
@@ -95,6 +95,7 @@ const NavBar = ({ scrolled }) => {
               smooth={true}
               duration={500}
               onSetActive={() => handleSetActive(2)}
+              onClick={() => setMenuOpen(false)}
               className={activePage === 2 ? 'active' : ''}
             >
               Revision and Proofreading
@@ -106,12 +107,12 @@ const NavBar = ({ scrolled }) => {
               smooth={true}
               duration={500}
               onSetActive={() => handleSetActive(3)}
+              onClick={() => setMenuOpen(false)}
               className={activePage === 3 ? 'active' : ''}
             >
               Copywriting Services
             </ScrollLink>
           </li>
-        
         </ul>
       </div>
     </nav>

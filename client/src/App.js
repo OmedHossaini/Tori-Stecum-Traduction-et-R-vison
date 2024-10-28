@@ -6,37 +6,26 @@ import TranslationServices from './components/TranslationServices';
 import RevisionProofreading from './components/RevisionProofreading';
 import CopywritingServices from './components/CopyWritingServices';
 
-import AnimatedBackground from './components/AnimatedBackground';
-
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
+    const handleScroll = () => setScrollPosition(window.scrollY);
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <Router>
-      
       <div className="App">
         <NavBar scrolled={scrollPosition > 50} />
-
         <div className="scrollable-content">
-          
           <HeroSection />
           <TranslationServices />
           <RevisionProofreading />
           <CopywritingServices />
         </div>
-
         <footer className="App-footer">
           <p>Contact us for high-quality language services tailored to your needs.</p>
         </footer>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/TranslationServices.css';
-import AnimatedBackground from './AnimatedBackground';
+
 
 const TranslationServices = () => (
   

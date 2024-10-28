@@ -135,9 +135,7 @@
 }
 
 @media (max-width: 768px) {
-  .logo {
-    max-width: 100%; /* Adjust logo size for mobile */
-  }
+ 
 
   .menu-toggle {
     display: flex;
