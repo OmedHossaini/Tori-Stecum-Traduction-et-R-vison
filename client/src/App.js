@@ -5,8 +5,7 @@ import HeroSection from './components/HeroSection';
 import TranslationServices from './components/TranslationServices';
 import RevisionProofreading from './components/RevisionProofreading';
 import CopywritingServices from './components/CopyWritingServices';
-import ContactMe from './components/ContactMe';
-import ContactPage from './components/ContactPage';
+
 import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
@@ -36,7 +35,6 @@ function App() {
           <TranslationServices />
           <RevisionProofreading />
           <CopywritingServices />
-          <ContactPage />
         </div>
 
         <footer className="App-footer">

@@ -10,11 +10,18 @@ const NavBar = ({ scrolled }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollOffset = window.scrollY;
-      // Use your section offsets here
-      const translationOffset = document.getElementById('translation').offsetTop;
-      const revisionOffset = document.getElementById('revision').offsetTop;
-      const copywritingOffset = document.getElementById('copywriting').offsetTop;
-      const contactOffset = document.getElementById('contact').offsetTop;
+
+      // Get each section by ID and check if they exist before accessing offsetTop
+      const translationSection = document.getElementById('translation');
+      const revisionSection = document.getElementById('revision');
+      const copywritingSection = document.getElementById('copywriting');
+      const contactSection = document.getElementById('contact');
+
+      // Safely set the offset values with null checks
+      const translationOffset = translationSection ? translationSection.offsetTop : Infinity;
+      const revisionOffset = revisionSection ? revisionSection.offsetTop : Infinity;
+      const copywritingOffset = copywritingSection ? copywritingSection.offsetTop : Infinity;
+      const contactOffset = contactSection ? contactSection.offsetTop : Infinity;
 
       if (scrollOffset < translationOffset) {
         setActivePage(0);
