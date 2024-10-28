@@ -1,7 +1,7 @@
 .navbar {
   background-color: rgba(255, 255, 255, 0.986); /* Dark blue background */
   color: #ecf0f1; /* Light text color */
-  padding: 15px 0;
+  padding: 15px, 0px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px
 }
 
 .logo-container {
@@ -106,32 +107,6 @@
   background-color: #3498db; /* Default blob color */
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
-}
-
-.nav-links li:hover::after,
-.nav-links li.active::after {
-  width: 100%;
-}
-
-/* Different colors for each page */
-.nav-links li:nth-child(1)::after {
-  background-color: #ff6347; /* Different color for the first page */
-}
-
-.nav-links li:nth-child(2)::after {
-  background-color: #32cd32; /* Different color for the second page */
-}
-
-.nav-links li:nth-child(3)::after {
-  background-color: #9370db; /* Different color for the third page */
-}
-
-.nav-links li:nth-child(4)::after {
-  background-color: #ffd700; /* Different color for the fourth page */
-}
-
-.nav-links li:nth-child(5)::after {
-  background-color: #8a2be2; /* Different color for the fifth page */
 }
 
 @media (max-width: 768px) {

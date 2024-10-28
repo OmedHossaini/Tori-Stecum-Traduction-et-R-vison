@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink
 import '../css/HeroSection.css';
 import AnimatedBackground from './AnimatedBackground';
 
@@ -29,9 +30,14 @@ const HeroSection = () => {
         </p>
 
         <div className="cta-button-container">
-          <a href="mailto:toristecum.translations@gmail.com" className="cta-button">
-            Send an Email! 
-          </a>
+          <ScrollLink
+            to="contact" // Navigate to the contact section
+            smooth={true}
+            duration={500}
+            className="cta-button"
+          >
+            Go to Contact Page!
+          </ScrollLink>
         </div>
       </div>
     </div>
