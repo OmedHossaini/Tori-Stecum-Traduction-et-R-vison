@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import TranslationServices from './components/TranslationServices';
 import RevisionProofreading from './components/RevisionProofreading';
 import CopywritingServices from './components/CopyWritingServices';
+import Contact from './components/Contact';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -25,6 +26,9 @@ function App() {
           <TranslationServices />
           <RevisionProofreading />
           <CopywritingServices />
+          <div id="contact"> 
+            <Contact />
+          </div>
         </div>
         <footer className="App-footer">
           <p>Contact us for high-quality language services tailored to your needs.</p>

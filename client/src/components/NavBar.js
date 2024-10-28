@@ -13,12 +13,12 @@ const NavBar = ({ scrolled }) => {
       const translationSection = document.getElementById('translation');
       const revisionSection = document.getElementById('revision');
       const copywritingSection = document.getElementById('copywriting');
-      const contactSection = document.getElementById('contact');
+      const contactSection = document.getElementById('contact'); // Added contact section
 
       const translationOffset = translationSection ? translationSection.offsetTop : Infinity;
       const revisionOffset = revisionSection ? revisionSection.offsetTop : Infinity;
       const copywritingOffset = copywritingSection ? copywritingSection.offsetTop : Infinity;
-      const contactOffset = contactSection ? contactSection.offsetTop : Infinity;
+      const contactOffset = contactSection ? contactSection.offsetTop : Infinity; // Added contact offset
 
       if (scrollOffset < translationOffset) {
         setActivePage(0);
@@ -27,7 +27,7 @@ const NavBar = ({ scrolled }) => {
       } else if (scrollOffset < copywritingOffset) {
         setActivePage(2);
       } else if (scrollOffset < contactOffset) {
-        setActivePage(3);
+        setActivePage(3); // Updated active page for contact
       } else {
         setActivePage(4);
       }
@@ -111,6 +111,18 @@ const NavBar = ({ scrolled }) => {
               className={activePage === 3 ? 'active' : ''}
             >
               Copywriting Services
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink
+              to="contact" // Added contact link
+              smooth={true}
+              duration={500}
+              onSetActive={() => handleSetActive(4)} // Updated active page for contact
+              onClick={() => setMenuOpen(false)}
+              className={activePage === 4 ? 'active' : ''}
+            >
+              Contact
             </ScrollLink>
           </li>
         </ul>

@@ -3,8 +3,6 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -17,18 +15,18 @@ app.post('/api/submitForm', async (req, res) => {
     const formData = req.body;
     console.log('Received form data:', formData);
 
-    // Send email using nodemailer
+    // Set up nodemailer transporter for Gmail
     const transporter = nodemailer.createTransport({
-      service: 'outlook',
+      service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.EMAIL_USER, // Your Gmail address
+        pass: process.env.EMAIL_PASSWORD, // Your Gmail password or App Password
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'toristecum.translations@gmail.com',
+      from: formData.email, // The user's email address
+      to: 'toristecum.translations@gmail.com', // Your destination email address
       subject: 'New Contact Form Submission',
       text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
     };
