@@ -111,17 +111,7 @@ const NavBar = ({ scrolled }) => {
               Copywriting Services
             </ScrollLink>
           </li>
-          <li>
-            <ScrollLink
-              to="contact"
-              smooth={true}
-              duration={500}
-              onSetActive={() => handleSetActive(4)}
-              className={activePage === 4 ? 'active' : ''}
-            >
-              Contact Me
-            </ScrollLink>
-          </li>
+        
         </ul>
       </div>
     </nav>
