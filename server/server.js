@@ -6,11 +6,12 @@ module.exports = async (req, res) => {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  try {
-    const { name, email, message } = req.body;
-    console.log('Received form data:', { name, email, message });
+  const { name, email, message } = req.body;
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: 'All fields are required.' });
+  }
 
-    // Set up nodemailer transporter for Gmail
+  try {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -27,14 +28,12 @@ module.exports = async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully');
-    res.status(201).json({ message: 'Form submitted successfully' });
+    return res.status(201).json({ message: 'Form submitted successfully' });
   } catch (error) {
-    console.error('Error submitting form:', error.message || error);
-    res.status(500).json({
+    console.error('Error submitting form:', error);
+    return res.status(500).json({
       message: 'Internal Server Error',
-      details: 'Failed to process the form submission',
-      error: error.message || error,
+      details: error.message,
     });
   }
 };
