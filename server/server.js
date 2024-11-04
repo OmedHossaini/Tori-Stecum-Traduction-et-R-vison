@@ -4,9 +4,10 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://tori-stecum-traduction-et-r-vison.vercel.app/' // Replace with your actual frontend URL
+}));
 app.use(express.json());
 
 // Server - /api/submitForm route
@@ -39,9 +40,4 @@ app.post('/api/submitForm', async (req, res) => {
     console.error('Error submitting form:', error.message || error);
     res.status(500).json({ message: 'Internal Server Error', details: 'Failed to process the form submission', error: error.message || error });
   }
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
