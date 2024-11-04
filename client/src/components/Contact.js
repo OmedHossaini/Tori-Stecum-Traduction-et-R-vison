@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../css/Contact.css'; 
+import '../css/Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +17,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/submitForm', formData);
+      const apiUrl = process.env.NODE_ENV === 'production'
+        ? 'https://your-project-name.vercel.app/api/submitForm'
+        : 'http://localhost:5000/api/submitForm';
+
+      await axios.post(apiUrl, formData);
       alert('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' }); // Clear the form
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       alert('Failed to send message. Please try again later.');
     }
