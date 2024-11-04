@@ -9,6 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/api/test', (req, res) => {
+  res.status(200).json({ message: 'API is working' });
+});
+
+
 // API route to handle form submissions
 app.post('/api/submitForm', async (req, res) => {
   try {
