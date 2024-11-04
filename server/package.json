@@ -1,12 +1,23 @@
 {
-  "name": "my-project",
+  "name": "tori-stecum-traduction-et-r-vison",
   "version": "1.0.0",
-  "main": "api/submitForm.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "vercel dev"
+    "start": "node server",
+    "dev": "nodemon server"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "nodemailer": "^6.9.16"
+    "express": "^4.21.1",
+    "mongodb": "^6.3.0",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.0.3"
   }
 }
