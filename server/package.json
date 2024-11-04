@@ -1,23 +1,16 @@
 {
-  "name": "tori-stecum-traduction-et-r-vison",
+  "name": "tori-stecum-traduction-et-revision",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Backend for handling contact form submissions",
+  "main": "api/submitForm.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "vercel dev",  
+    "dev": "vercel dev"     
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongodb": "^6.3.0",
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^6.9.16",
-    "nodemon": "^3.0.3"
+    "nodemailer": "^6.9.16"
   }
 }
