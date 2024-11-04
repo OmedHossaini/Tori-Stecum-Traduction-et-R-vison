@@ -9,6 +9,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/api/test', (req, res) => {
+  res.status(200).send('API is working');
+});
+
 // Server - /api/submitForm route
 app.post('/api/submitForm', async (req, res) => {
   try {
