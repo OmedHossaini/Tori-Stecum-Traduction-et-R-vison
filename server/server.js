@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Server - /api/submitForm route
-app.post('https://tori-stecum-traduction-et-r-vison.onrender.com/api/submitForm', async (req, res) => {
+app.post('/api/submitForm', async (req, res) => { // Fixed the route definition
   try {
     const formData = req.body;
     console.log('Received form data:', formData);
