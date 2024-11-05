@@ -17,7 +17,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/submitForm', formData);
+      await axios.post('https://tori-stecum-traduction-et-r-vison.onrender.com/api/submitForm', formData);
       alert('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' }); // Clear the form
     } catch (error) {
