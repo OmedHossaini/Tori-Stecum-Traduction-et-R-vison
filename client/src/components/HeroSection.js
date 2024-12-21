@@ -22,7 +22,7 @@ const HeroSection = () => {
         <p className="hero-subheading">Your Partner for Quality Language Services</p>
 
         <p className="hero-message">
-          Hello and welcome! Looking for expert translation or linguistic services/advice whether it’s to connect better with people and break down those language barriers? You’ve come to the right place. Whether you’re an organization, a business, an entrepreneur, or simply looking to connect with friends from different corners of the world, our translation services will be tailored to meet your diverse needs.
+          Hello and welcome! Looking for expert translation or linguistic services/advice whether it’s to connect better with people and break down those language barriers? You’ve come to the right place. Whether you’re an organization, a business, an entrepreneur, or simply looking to connect professionals from different corners of the world, our translation services will be tailored to meet your diverse needs.
         </p>
 
         <p className="hero-message">
