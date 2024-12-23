@@ -31,7 +31,7 @@ const HeroSection = () => {
 
         <div className="cta-button-container">
           <ScrollLink
-            to="contact" // Navigate to the contact section
+            to="contact" 
             smooth={true}
             duration={500}
             className="cta-button"
