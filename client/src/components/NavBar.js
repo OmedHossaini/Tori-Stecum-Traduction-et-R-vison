@@ -27,7 +27,7 @@ const NavBar = ({ scrolled }) => {
       } else if (scrollOffset < copywritingOffset) {
         setActivePage(2);
       } else if (scrollOffset < contactOffset) {
-        setActivePage(3); // Updated active page for contact
+        setActivePage(3); 
       } else {
         setActivePage(4);
       }
