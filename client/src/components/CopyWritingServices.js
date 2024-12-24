@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/CopyWritingServices.css';
 import AnimatedBackground
- from './AnimatedBackground';
+from './AnimatedBackground';
 const CopywritingServices = () => (
   
   <div id="copywriting" className="copywriting-services-container">

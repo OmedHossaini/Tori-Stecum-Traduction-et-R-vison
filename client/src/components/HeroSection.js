@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink
+import { Link as ScrollLink } from 'react-scroll';
 import '../css/HeroSection.css';
 import AnimatedBackground from './AnimatedBackground';
 
