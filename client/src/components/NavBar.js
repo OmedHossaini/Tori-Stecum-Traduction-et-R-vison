@@ -18,7 +18,7 @@ const NavBar = ({ scrolled }) => {
       const translationOffset = translationSection ? translationSection.offsetTop : Infinity;
       const revisionOffset = revisionSection ? revisionSection.offsetTop : Infinity;
       const copywritingOffset = copywritingSection ? copywritingSection.offsetTop : Infinity;
-      const contactOffset = contactSection ? contactSection.offsetTop : Infinity; // Added contact offset
+      const contactOffset = contactSection ? contactSection.offsetTop : Infinity; 
 
       if (scrollOffset < translationOffset) {
         setActivePage(0);
@@ -115,10 +115,10 @@ const NavBar = ({ scrolled }) => {
           </li>
           <li>
             <ScrollLink
-              to="contact" // Added contact link
+              to="contact"
               smooth={true}
               duration={500}
-              onSetActive={() => handleSetActive(4)} // Updated active page for contact
+              onSetActive={() => handleSetActive(4)}
               onClick={() => setMenuOpen(false)}
               className={activePage === 4 ? 'active' : ''}
             >
