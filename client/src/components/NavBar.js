@@ -50,7 +50,7 @@ const NavBar = ({ scrolled }) => {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
-    setMenuOpen(false); // Close menu on scroll
+    setMenuOpen(false); 
   };
 
   return (
