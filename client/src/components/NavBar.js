@@ -13,7 +13,7 @@ const NavBar = ({ scrolled }) => {
       const translationSection = document.getElementById('translation');
       const revisionSection = document.getElementById('revision');
       const copywritingSection = document.getElementById('copywriting');
-      const contactSection = document.getElementById('contact'); // Added contact section
+      const contactSection = document.getElementById('contact'); 
 
       const translationOffset = translationSection ? translationSection.offsetTop : Infinity;
       const revisionOffset = revisionSection ? revisionSection.offsetTop : Infinity;
