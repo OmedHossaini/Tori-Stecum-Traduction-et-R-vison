@@ -6,7 +6,7 @@ import TranslationServices from './components/TranslationServices';
 import RevisionProofreading from './components/RevisionProofreading';
 import CopywritingServices from './components/CopyWritingServices';
 import Contact from './components/Contact';
-import { Analytics } from "@vercel/analytics/react"; // Importing Vercel Analytics
+import { Analytics } from "@vercel/analytics/react"; 
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);

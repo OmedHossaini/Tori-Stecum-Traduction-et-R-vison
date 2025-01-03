@@ -19,7 +19,7 @@ const Contact = () => {
     try {
       await axios.post('https://tori-stecum-traduction-et-r-vison.onrender.com/api/submitForm', formData);
       alert('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' }); // Clear the form
+      setFormData({ name: '', email: '', message: '' }); 
     } catch (error) {
       alert('Failed to send message. Please try again later.');
     }
