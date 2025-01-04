@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/TranslationServices.css';
 
-
 const TranslationServices = () => (
   
   <div id="translation" className="TranslationServices-container">
