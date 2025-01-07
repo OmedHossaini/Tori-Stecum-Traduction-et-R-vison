@@ -21,7 +21,7 @@ body, html {
   }
   
   .contact-container h2 {
-    font-size: 2.5rem; /* Similar heading size to copywriting services */
+    font-size: 2.5rem; 
     color: #035214;
     margin-bottom: 20px; /* Margin below heading */
   }
