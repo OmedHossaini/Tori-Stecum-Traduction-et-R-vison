@@ -6,7 +6,7 @@ body, html {
   
   .contact-container {
     background-color: #f8f9fa; 
-    padding: 40px; /* Match padding for consistency */
+    padding: 40px; 
     box-sizing: border-box; /* Ensures padding and border are included in the width */
     overflow: hidden; /* Prevents horizontal overflow */
     display: flex;
