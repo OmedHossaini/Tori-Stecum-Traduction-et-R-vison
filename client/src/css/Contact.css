@@ -28,7 +28,7 @@ body, html {
   
   .contact-container form {
     display: flex;
-    flex-direction: column; /* Stack form elements vertically */
+    flex-direction: column; 
     width: 100%; /* Ensure the form takes full width */
   }
   
