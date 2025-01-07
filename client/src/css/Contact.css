@@ -8,7 +8,7 @@ body, html {
     background-color: #f8f9fa; 
     padding: 40px; 
     box-sizing: border-box;
-    overflow: hidden; /* Prevents horizontal overflow */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
