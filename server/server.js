@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: '*' })); // Allow all origins
+app.use(cors({ origin: '*' })); 
 app.use(express.json());
 
 app.post('/api/submitForm', async (req, res) => {
