@@ -6,14 +6,18 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({ origin: '*' })); // Allow all origins
 app.use(express.json());
-
 
 app.post('/api/submitForm', async (req, res) => {
   try {
-    const formData = req.body;
-    console.log('Received form data:', formData);
+    const { name, email, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    console.log('Received form data:', req.body);
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -24,10 +28,10 @@ app.post('/api/submitForm', async (req, res) => {
     });
 
     const mailOptions = {
-      from: formData.email,
+      from: email,
       to: 'toristecum.translations@gmail.com',
       subject: 'New Contact Form Submission',
-      text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
     await transporter.sendMail(mailOptions);
@@ -36,11 +40,8 @@ app.post('/api/submitForm', async (req, res) => {
     res.status(201).json({ message: 'Form submitted successfully' });
   } catch (error) {
     console.error('Error submitting form:', error.message || error);
-    res.status(500).json({ message: 'Internal Server Error', details: 'Failed to process the form submission', error: error.message || error });
+    res.status(500).json({ message: 'Internal Server Error', details: error.message || error });
   }
 });
 
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
