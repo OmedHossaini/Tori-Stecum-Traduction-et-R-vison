@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../css/Contact.css'; 
+import '../css/Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,12 +17,20 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Show loading state
     try {
-      await axios.post('https://tori-stecum-traduction-et-r-vison.onrender.com/api/submitForm', formData);
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' }); 
+      const response = await axios.post(
+        'https://tori-stecum-traduction-et-r-vison.onrender.com/api/submitForm',
+        formData,
+        { timeout: 10000 } // Timeout after 10s
+      );
+      alert(response.data.message || 'Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       alert('Failed to send message. Please try again later.');
+      console.error('Form submission error:', error);
+    } finally {
+      setLoading(false); // Hide loading state
     }
   };
 
@@ -52,7 +61,9 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send Message</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Sending...' : 'Send Message'}
+        </button>
       </form>
     </div>
   );

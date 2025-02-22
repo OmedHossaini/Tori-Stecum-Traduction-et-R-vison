@@ -5,31 +5,31 @@ body, html {
   }
   
   .contact-container {
-    background-color: #f8f9fa; /* Light background color similar to copywriting services */
-    padding: 40px; /* Match padding for consistency */
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
-    overflow: hidden; /* Prevents horizontal overflow */
+    background-color: #f8f9fa; 
+    padding: 40px; 
+    box-sizing: border-box;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Minimum height of the viewport */
-    border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
-    max-width: 600px; /* Optional: Max width for the form container */
-    margin: 20px auto; /* Centers the container */
+    min-height: 100vh; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; 
+    margin: 20px auto; 
   }
   
   .contact-container h2 {
-    font-size: 2.5rem; /* Similar heading size to copywriting services */
+    font-size: 2.5rem; 
     color: #035214;
-    margin-bottom: 20px; /* Margin below heading */
+    margin-bottom: 20px; 
   }
   
   .contact-container form {
     display: flex;
-    flex-direction: column; /* Stack form elements vertically */
-    width: 100%; /* Ensure the form takes full width */
+    flex-direction: column; 
+    width: 100%; 
   }
   
   .contact-container label {
@@ -60,15 +60,14 @@ body, html {
     background-color: #01390d;
   }
   
-  /* Additional styles for responsiveness */
+  
   @media only screen and (max-width: 768px) {
     .contact-container h2 {
-      font-size: 2rem; /* Adjust heading size for mobile */
+      font-size: 2rem; 
     }
   
     .contact-container input,
     .contact-container textarea {
-      font-size: 0.9em; /* Adjust font size for mobile */
+      font-size: 0.9em;
     }
   }
-  
