@@ -98,7 +98,7 @@ const translations = {
         phone: 'Phone',
         phoneText: 'Available on request',
         email: 'Email',
-        emailText: 'info@toristecum.com',
+        emailText: 'toristecum.translations@gmail.com',
         location: 'Location',
         locationText: 'Montreal, Canada',
         
@@ -226,7 +226,7 @@ const translations = {
         phone: 'Téléphone',
         phoneText: 'Disponible sur demande',
         email: 'Email',
-        emailText: 'info@toristecum.com',
+        emailText: 'toristecum.translations@gmail.com',
         location: 'Emplacement',
         locationText: 'Montréal, Canada',
         
