@@ -17,5 +17,4 @@ const AnimatedBackground = () => (
     </ul>
   </div>
 );
-
 export default AnimatedBackground;
