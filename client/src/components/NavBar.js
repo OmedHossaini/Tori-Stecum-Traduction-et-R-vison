@@ -1,129 +1,96 @@
-import React, { useEffect, useState } from 'react';
-import { Link as ScrollLink, Events, animateScroll as scroll } from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
+import { useLanguage } from '../LanguageContext';
+import translations from '../Translations';
 import '../css/NavBar.css';
-import logo from '../Tori Stecum.png';
 
 const NavBar = ({ scrolled }) => {
-  const [activePage, setActivePage] = useState(0);
+  const [activeSection, setActiveSection] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
+  
+  // Logo is represented as an SVG directly in the component for better control
+  const Logo = () => (
+    <svg viewBox="0 0 200 60" className="logo">
+      <text x="10" y="40" fill="#035214" fontFamily="'Exo', sans-serif" fontSize="24" fontWeight="bold">
+        Tori Stecum
+      </text>
+      <text x="10" y="55" fill="#333" fontFamily="'Exo', sans-serif" fontSize="12">
+        {language === 'en' ? 'Translation and Revision' : 'Traduction et Révision'}
+      </text>
+    </svg>
+  );
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollOffset = window.scrollY;
-      const translationSection = document.getElementById('translation');
-      const revisionSection = document.getElementById('revision');
-      const copywritingSection = document.getElementById('copywriting');
-      const contactSection = document.getElementById('contact'); 
-
-      const translationOffset = translationSection ? translationSection.offsetTop : Infinity;
-      const revisionOffset = revisionSection ? revisionSection.offsetTop : Infinity;
-      const copywritingOffset = copywritingSection ? copywritingSection.offsetTop : Infinity;
-      const contactOffset = contactSection ? contactSection.offsetTop : Infinity; 
-
-      if (scrollOffset < translationOffset) {
-        setActivePage(0);
-      } else if (scrollOffset < revisionOffset) {
-        setActivePage(1);
-      } else if (scrollOffset < copywritingOffset) {
-        setActivePage(2);
-      } else if (scrollOffset < contactOffset) {
-        setActivePage(3); 
-      } else {
-        setActivePage(4);
+      const sections = ['home', 'translation', 'revision', 'copywriting', 'contact'];
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (!element) continue;
+        
+        const rect = element.getBoundingClientRect();
+        const offset = 100; // Adjust this value as needed
+        
+        if (rect.top <= offset && rect.bottom > offset) {
+          setActiveSection(section);
+          break;
+        }
       }
     };
 
-    Events.scrollEvent.register('begin', () => {});
-    Events.scrollEvent.register('end', () => {});
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      Events.scrollEvent.remove('begin');
-      Events.scrollEvent.remove('end');
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSetActive = (to) => {
-    setActivePage(to);
-  };
-
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-    setMenuOpen(false); 
-  };
+  const navItems = [
+    { id: 'home', label: t.nav.home },
+    { id: 'translation', label: t.nav.translation },
+    { id: 'revision', label: t.nav.revision },
+    { id: 'copywriting', label: t.nav.copywriting },
+    { id: 'contact', label: t.nav.contact }
+  ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <div className="logo-container" onClick={scrollToTop}>
-          <img src={logo} alt="Logo" className="logo" />
+      <div className="container">
+        <div className="navbar-brand" onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setMenuOpen(false);
+        }}>
+          <Logo />
         </div>
-        <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        
+        <div 
+          className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li>
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
-              onSetActive={() => handleSetActive(0)}
-              onClick={() => setMenuOpen(false)}
-              className={activePage === 0 ? 'active' : ''}
-            >
-              Home
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
-              to="translation"
-              smooth={true}
-              duration={500}
-              onSetActive={() => handleSetActive(1)}
-              onClick={() => setMenuOpen(false)}
-              className={activePage === 1 ? 'active' : ''}
-            >
-              Translation Services
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
-              to="revision"
-              smooth={true}
-              duration={500}
-              onSetActive={() => handleSetActive(2)}
-              onClick={() => setMenuOpen(false)}
-              className={activePage === 2 ? 'active' : ''}
-            >
-              Revision and Proofreading
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
-              to="copywriting"
-              smooth={true}
-              duration={500}
-              onSetActive={() => handleSetActive(3)}
-              onClick={() => setMenuOpen(false)}
-              className={activePage === 3 ? 'active' : ''}
-            >
-              Copywriting Services
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
-              to="contact"
-              smooth={true}
-              duration={500}
-              onSetActive={() => handleSetActive(4)}
-              onClick={() => setMenuOpen(false)}
-              className={activePage === 4 ? 'active' : ''}
-            >
-              Contact
-            </ScrollLink>
+        
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          {navItems.map(item => (
+            <li key={item.id}>
+              <ScrollLink
+                to={item.id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className={activeSection === item.id ? 'active' : ''}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </ScrollLink>
+            </li>
+          ))}
+          <li className="language-switch">
+            <button onClick={toggleLanguage} className="language-toggle">
+              {language === 'en' ? 'FR' : 'EN'}
+            </button>
           </li>
         </ul>
       </div>

@@ -1,41 +1,164 @@
-body, html {
+.copywriting-section {
+  background-color: #ffffff;
+  padding: 100px 0;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.copywriting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+.copywriting-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.copywriting-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #035214;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.card-header h3 {
   margin: 0;
-  padding: 0;
-  height: 100%;
+  font-size: 1.3rem;
 }
 
-.copywriting-services-container {
-  background-color: #f8f9fa; /* Light background color */
-  padding: 40px;
-  box-sizing: border-box; /* Ensures padding and border are included in the width */
-  overflow: hidden; /* Prevents horizontal overflow */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Minimum height of the viewport */
+.card-body {
+  padding: 25px;
 }
 
-.copywriting-services-heading {
-  font-size: 2.5rem;
-  color: #035214;
+.card-body p {
   margin-bottom: 20px;
-}
-
-.copywriting-services-paragraph {
-  font-size: 1.4rem;
-  color: #343a40; /* Dark text color */
-  margin-top: 20px;
+  color: #555;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Additional styles for responsiveness */
-@media only screen and (max-width: 768px) {
-  .copywriting-services-heading {
-    font-size: 2rem;
-  }
+.examples-list {
+  list-style-type: none;
+  padding: 0;
+}
 
-  .copywriting-services-paragraph {
-    font-size: 1.2rem;
+.examples-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.examples-list li:last-child {
+  border-bottom: none;
+}
+
+.copywriting-process {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.copywriting-process h3 {
+  text-align: center;
+  color: #035214;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+.process-step {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.step-number {
+  width: 70px;
+  height: 70px;
+  background-color: #035214;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.step-content h4 {
+  font-size: 1.2rem;
+  color: #035214;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+  .process-steps::before {
+    display: none;
+  }
+  
+  .process-step {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .copywriting-section {
+    padding: 60px 0;
+  }
+  
+  .intro-text p {
+    font-size: 1.1rem;
+  }
+  
+  .process-step {
+    flex-basis: 100%;
   }
 }

@@ -1,41 +1,153 @@
-.TranslationServices-container {
-  background-color: white; /* Light background */
-  padding: 40px;
-  margin-top: 20px;
-  width: 100%;
-  height: 100vh;
-  box-sizing: border-box; /* Ensures padding and border are included in the width */
-  overflow: hidden; /* Prevents horizontal overflow */
+.translation-section {
+  background-color: #ffffff;
+  padding: 100px 0;
+}
+
+.translation-section .text-content {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.translation-section .text-content p {
+  margin-bottom: 25px;
+}
+
+.translation-section h3 {
+  color: #035214;
+  font-size: 1.5rem;
+  margin: 30px 0 20px;
+}
+
+.language-pairs {
+  margin: 25px 0;
+}
+
+.language-pair {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.TranslationServices-heading {
-  font-size: 2.5em;
   margin-bottom: 20px;
-  color: #2c3e50; /* Dark text color */
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.TranslationServices-paragraph {
-  font-size: 1.4em;
-  line-height: 1.6;
+.language-pair:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.language-icon {
+  background-color: #035214;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.arrow {
+  margin: 0 10px;
+  color: #666;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.language-label {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.note {
+  background-color: #f0f7f1;
+  padding: 20px;
+  border-left: 4px solid #035214;
+  border-radius: 0 8px 8px 0;
+  margin-top: 30px;
+}
+
+.note p {
+  margin: 0;
+  font-style: italic;
+  color: #444;
+}
+
+.visual-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #035214;
   margin-bottom: 15px;
-  color: #34495e; /* Slightly darker text color */
 }
 
-/* Additional styles for responsiveness */
-@media only screen and (max-width: 768px) {
-  .TranslationServices-container {
-    height: 130vh; /* Change height on smaller devices */
-  }
+.service-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-  .TranslationServices-heading {
-    font-size: 2em;
+@media (max-width: 992px) {
+  .content-grid {
+    grid-template-columns: 1fr;
   }
+  
+  .text-content, .visual-content {
+    margin-bottom: 40px;
+  }
+}
 
-  .TranslationServices-paragraph {
-    font-size: 1.2em;
+@media (max-width: 768px) {
+  .translation-section {
+    padding: 60px 0;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-pair {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 10px;
+  }
+  
+  .language-label {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
   }
 }

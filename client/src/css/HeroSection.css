@@ -1,103 +1,145 @@
 .hero-section {
-  background-color: rgb(245, 250, 245);
-  color: #141414;
-  text-align: center;
-  padding: 80px 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  z-index: 3;
-  position: relative; /* Add position relative for absolute positioning */
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f9f5;
+  padding: 100px 0;
+  margin-top: -80px; /* Offset the navbar padding */
 }
 
-.loaded {
-  opacity: 1;
-  transform: translateY(0);
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(3, 82, 20, 0.05);
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .hero-content {
   position: relative;
-  z-index: 1; /* Ensure content is above the background */
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.hero-heading {
-  font-size: 3em;
-  margin-bottom: 10px;
-  font-weight: bold;
+.hero-section.loaded .hero-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hero-subheading {
-  font-size: 1.8em;
-  margin-bottom: 20px;
+.hero-content .title {
+  font-size: 3.5rem;
+  font-weight: 700;
   color: #035214;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
-.hero-message {
-  font-size: 1.4em;
-  line-height: 1.6;
+.hero-content .title span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+  margin-top: 10px;
+}
+
+.hero-content .subtitle {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.hero-content .description {
+  margin-bottom: 40px;
+}
+
+.hero-content .description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
   margin-bottom: 20px;
+  color: #444;
 }
 
-.cta-button-container {
-  margin-top: 30px;
-  position: relative; /* Add position relative */
-  z-index: 2; /* Set a higher z-index value */
+.hero-content .cta-button {
+  font-size: 1.1rem;
+  padding: 14px 30px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 15px rgba(3, 82, 20, 0.2);
 }
 
-.cta-button {
-  background-color: #035214;
-  color: #ffffff;
-  padding: 15px 30px;
-  font-size: 1.2em;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-  display: inline-block;
-  position: relative; /* Add position relative */
-}
-
-.cta-button:hover {
-  background-color: #2980b9;
-}
-
-
-/* Quote icon styles */
-.quote-icon {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-size: 2em;
-  color: #3498db;
-}
-
-/* Additional styles for responsiveness */
-@media only screen and (max-width: 768px) {
-  .hero-heading {
-    font-size: 2.5em;
-    padding-top: 100px;
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 120px 0 60px;
   }
-
-  .hero-subheading {
-    font-size: 1.5em;
+  
+  .hero-content .title {
+    font-size: 2.5rem;
   }
-
-  .hero-message {
-    font-size: 1.2em;
+  
+  .hero-content .title span {
+    font-size: 1.5rem;
   }
-
-  .cta-button {
-    font-size: 1em;
+  
+  .hero-content .subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .hero-content .description p {
+    font-size: 1rem;
+  }
+  
+  .hero-content .cta-button {
+    font-size: 1rem;
     padding: 12px 25px;
   }
+}
+
+@media (max-width: 480px) {
   .hero-section {
-    height: auto; /* Override the height property to make the section height adapt to its content */
+    padding: 100px 0 50px;
+  }
+  
+  .hero-content .title {
+    font-size: 2rem;
+  }
+  
+  .hero-content .title span {
+    font-size: 1.3rem;
+  }
+  
+  .hero-content .subtitle {
+    font-size: 1.1rem;
   }
 }
