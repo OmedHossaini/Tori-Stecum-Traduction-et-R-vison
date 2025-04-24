@@ -63,7 +63,7 @@ const Footer = () => {
           
           <div className="footer-contact">
             <h4>{t.nav.contact}</h4>
-            <p>Email: info@toristecum.com</p>
+            <p>Email: toristecum.translations@gmail.com</p>
             <p>{language === 'en' ? 'Montreal, Canada' : 'Montréal, Canada'}</p>
             <button onClick={toggleLanguage} className="language-button">
               {t.footer.switchLanguage}
